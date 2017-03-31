@@ -4,32 +4,32 @@
 
 function theOverlord() {
   var rules = "cry all day";
-  var money = "belongs to the overlord"
+  var money = "belongs to the overlord";
 
   function thePowerlessFigurehead() {
-    var rules = 'love me plz'
+    var rules = 'love me plz';
 
-      function theTragicHumanitarian() {
-        var rules = 'the golden rule'
-      }
+    function theTragicHumanitarian() {
+      var rules = 'the golden rule';
+    }
   }
 
   function theJudge() {
-    var job = "Wearing cool robes"
+    var job = "Wearing cool robes";
   }
 }
 
 //Assign your answers to the variables below.
-//1. The value of rules if accessed from thePowerlessFigurehead
-var ans1 = '';
+//1. The value of rules if accessed from thePowerlessFigurehead`
+var ans1 = 'love me plz';
 //2. The value of rules if accessed from theJudge
-var ans2 = '';
+var ans2 = 'cry all day';
 //3. The value of job if accessed from theOverlord
-var ans3 = '';
+var ans3 = undefined;
 //4. The value of job if accessed from thePowerlessFigurehead
-var ans4 = '';
+var ans4 = undefined;
 //5. The value of money if accessed from theTragicHumanitarian
-var ans5 = '';
+var ans5 = 'belongs to the overlord';
 
 ///Promises///
 
@@ -38,12 +38,12 @@ var ans5 = '';
 /////number in the Fibonacci sequence and resolve the promise
 /////with the answer when it completes.
 /////Fibonacci sequence:
-var fibonacci = function(n) {
-    if(n <= 2) {
-        return 1;
-    } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
+var fibonacci = function (n) {
+  if (n <= 2) {
+    return 1;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
 };
 
 
@@ -54,7 +54,14 @@ var fibonacci = function(n) {
 /////to the contextObj, and with the two parameters passed in - return
 /////the result.
 function contextIt(myFn, contextObj, param1, param2) {
+  // console.log('function running');
+  // var temp = myFn(param1,param2).bind(contextObj);
+  // console.log('Showing return val: ', temp);
 
+  console.log(myFn);
+  console.info(contextObj);
+  console.log(param1);
+  console.log(param2);
 }
 
 //8. Do the same as you did in question 6, except with the
@@ -77,11 +84,31 @@ var bubbles = 0; //Ignore this line except to mourn our lack of bubbles.
 /////parameters called hornColor, magicType, mana, and
 /////canFly; inside the function, assign each to an identically
 /////named property
+var Unicorn = function (hornColor, magicType, mana, canFly) {
+  this.hornColor = hornColor;
+  this.magicType = magicType;
+  this.mana = mana;
+  this.canFly = canFly;
+};
+
 
 //11. Add a prototype method to Unicorn called castBubbleWrapSpell
 /////which adds 100 to the global variable bubbles and takes away
 /////15 from mana on the unicorn until it hits zero.
+Unicorn.prototype.castBubbleWrapSpell = function () {
+  bubbles += 100;
+  console.log('Showing Mana: ', this.mana);
+  while(this.mana > 0){
+    this.mana -= 15;
+    console.log('Showing Mana after the minus: ', this.mana);
 
+    if(this.mana < 0) {
+      console.log('Showing mana in the if: ', this.mana);
+      this.mana = 0;
+      break;
+    }
+  }
+};
 
 
 /////Closures/////
